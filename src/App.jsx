@@ -5,26 +5,28 @@ import { useState } from "react";
 
 function App() {
   const [inputs, setInputs] = useState({
-        Initial: null,
-        Annual: null,
-        Expected: null,
-        Duration: null
+    Initial: 0,
+    Annual: 0,
+    Expected: 0,
+    Duration: 0
   });
 
+  const inputIsValid = inputs.Duration >= 1;
+
   function handleChange(inputIdentifier, event) {
-        setInputs( prevInputs => {
-            return {
-                ...prevInputs, 
-                [inputIdentifier]: event.target.value
-            };
-        });
-    }
+    setInputs( prevInputs => {
+        return {
+            ...prevInputs, 
+            [inputIdentifier]: +event.target.value
+        };
+    });
+  }
 
   return (
     <>
       <Header />
       <InputsBox onChange={handleChange} inputs={inputs}/>
-      <Result inputs={inputs}/>
+      {inputIsValid && <Result inputs={inputs}/>}
     </>
   )
 }
