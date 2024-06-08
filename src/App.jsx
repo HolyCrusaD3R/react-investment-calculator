@@ -5,10 +5,10 @@ import { useState } from "react";
 
 function App() {
   const [inputs, setInputs] = useState({
-    Initial: 0,
-    Annual: 0,
-    Expected: 0,
-    Duration: 0
+    Initial: null,
+    Annual: null,
+    Expected: null,
+    Duration: null
   });
 
   const inputIsValid = inputs.Duration >= 1;
