@@ -1,4 +1,4 @@
-# Project Title
+# React Investment Calculator
 
 This is investment calculator written in React
 
